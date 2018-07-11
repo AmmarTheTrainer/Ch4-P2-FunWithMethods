@@ -8,7 +8,6 @@ namespace Ch4_P2_FunWithMethods
 {
     class Program
     {
-<<<<<<< HEAD
         //public static int Add(int a , int b)
         //{
         //    return a + b;
@@ -19,16 +18,8 @@ namespace Ch4_P2_FunWithMethods
 
         static void Main(string[] args)
         {
-            Console.WriteLine(" Lecture 4 - Project 2 - Methods ");
-
-
-
-            Console.ReadLine();
-=======
-        GetContactInformation getContactInformation = new GetContactInformation();
-
-        static void Main(string[] args)
-        {
+            
+       
             Console.WriteLine(" Ch 4 - project 2 - Methods\n");
 
             #region - 1 - Pass two variables in by value
@@ -172,16 +163,15 @@ namespace Ch4_P2_FunWithMethods
         }
 
         // Arguments are passed by value by default.
-        static int Add(int x, int y)
-        {
-            int ans = x + y;
-            // Caller will not see these changes
-            // as you are modifying a copy of the
-            // original data.
-            x = 10000;
-            y = 88888;
-            return ans;
->>>>>>> df124adc840e28b30c0d3a7d2e9576621c860676
-        }
+        //static int Add(int x, int y)
+        //{
+        //    int ans = x + y;
+        //    // Caller will not see these changes
+        //    // as you are modifying a copy of the
+        //    // original data.
+        //    x = 10000;
+        //    y = 88888;
+        //    return ans;
+        //}
     }
 }
