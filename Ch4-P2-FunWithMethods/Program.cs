@@ -10,7 +10,9 @@ namespace Ch4_P2_FunWithMethods
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(" Ch 4 - project 2 - Methods");
 
+            Console.ReadLine();
         }
     }
 }
