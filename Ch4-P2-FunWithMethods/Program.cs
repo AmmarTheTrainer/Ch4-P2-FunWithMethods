@@ -8,6 +8,8 @@ namespace Ch4_P2_FunWithMethods
 {
     class Program
     {
+        GetContactInformation getContactInformation = new GetContactInformation();
+
         static void Main(string[] args)
         {
             Console.WriteLine(" Ch 4 - project 2 - Methods\n");
@@ -54,16 +56,67 @@ namespace Ch4_P2_FunWithMethods
             //SwapStrings(ref str1, ref str2);
             //Console.WriteLine("After: {0}, {1} ", str1, str2);
 
-            int a = 1;
-            int b = 2;
+            //int a = 1;
+            //int b = 2;
 
-            Console.WriteLine("Before: {0}, {1} ", a, b);
-            SwapStrings(ref a, ref b);
-            Console.WriteLine("After: {0}, {1} ", a, b);
+            //Console.WriteLine("Before: {0}, {1} ", a, b);
+            //SwapStrings(ref a, ref b);
+            //Console.WriteLine("After: {0}, {1} ", a, b);
+
+            #endregion
+
+            #region - 4 - ref Locals and Returns (New) ???????
+
+            // for the next lecture
+
+            #endregion
+
+            #region The params Modifier
+
+            //// Pass in a comma-delimited list of doubles...
+            //double average;
+            //average = CalculateAverage(4.0, 3.2, 5.7, 64.22, 87.2);
+            //Console.WriteLine("Average of data is: {0}", average);
+
+            //// ...or pass an array of doubles.
+            //double[] data = { 4.0, 3.2, 5.7 };
+            //average = CalculateAverage(data);
+            //Console.WriteLine("Average of data is: {0}", average);
+
+            //// Average of 0 is 0!
+            //Console.WriteLine("Average of data is: {0}", CalculateAverage());
+
+            string fullname = GetCompleteName("Haji", "ch", "Allah dita", "james bond" );
+
+            Console.WriteLine(fullname);
 
             #endregion
 
             Console.ReadLine();
+        }
+
+        // Return average of "some number" of doubles.
+        static double CalculateAverage(params double[] values)
+        {
+            Console.WriteLine("You sent me {0} doubles.", values.Length);
+            double sum = 0;
+            if (values.Length == 0)
+                return sum;
+            for (int i = 0; i < values.Length; i++)
+                sum += values[i];
+            return (sum / values.Length);
+        }
+        
+        static string GetCompleteName(params string[] names)
+        {
+            Console.WriteLine(" You sent me {0} names.", names.Length);
+
+            string fullName = string.Empty;
+
+            for (int i = 0; i < names.Length; i++)
+                fullName += " "+names[i];
+
+            return fullName;
         }
         // Reference parameters.
         public static void SwapStrings(ref int no1, ref int no2)
