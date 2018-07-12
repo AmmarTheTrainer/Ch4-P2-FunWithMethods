@@ -14,7 +14,6 @@ namespace Ch4_P2_FunWithMethods
         //}
 
         public static int Add(int a, int b) => a + b;
-        
 
         static void Main(string[] args)
         {
@@ -34,17 +33,17 @@ namespace Ch4_P2_FunWithMethods
             #region - 2 - use out modifier in C# Methods
 
 
-            // No need to assign initial value to local variables
-            // used as output parameters, provided the first time
-            // you use them is as output arguments.
-            // C# 7 allows for out parameters to be declared in the method call
+            ////No need to assign initial value to local variables
+            //// used as output parameters, provided the first time
+            //// you use them is as output arguments.
+            //// C# 7 allows for out parameters to be declared in the method call
             //int ans;
             //Add(90, 90, out ans);
             ////Add(90, 90, out int ans); // in C# 7
             //Console.WriteLine("90 + 90 = {0}", ans);
 
             //int i; string str; bool b;
-            //FillTheseValues(out i, out str,out b);
+            //FillTheseValues(out i, out str, out b);
             //Console.WriteLine("Int is: {0}", i);
             //Console.WriteLine("String is: {0}", str);
             //Console.WriteLine("Boolean is: {0}", b);
@@ -75,32 +74,46 @@ namespace Ch4_P2_FunWithMethods
 
             #region - 4 - ref Locals and Returns (New) ???????
 
-            // for the next lecture
+            //int[] numbers = { 1, 2, 3, 4, 5, 6 };
+            //int index = 2;
+            //ref int number = ref GiveMeNumber(numbers , index);
+
+            //Console.WriteLine("number at position {0} = {1}",index , number);
+
+            //number = 30;
+
+            //Console.WriteLine("number at position {0} = {1}", index, number);
+
 
             #endregion
 
             #region The params Modifier
 
-            //// Pass in a comma-delimited list of doubles...
-            //double average;
-            //average = CalculateAverage(4.0, 3.2, 5.7, 64.22, 87.2);
-            //Console.WriteLine("Average of data is: {0}", average);
+            // Pass in a comma-delimited list of doubles...
+            double average;
+            average = CalculateAverage(4.0, 3.2, 5.7, 64.22, 87.2);
+            Console.WriteLine("Average of data is: {0}", average);
 
-            //// ...or pass an array of doubles.
-            //double[] data = { 4.0, 3.2, 5.7 };
-            //average = CalculateAverage(data);
-            //Console.WriteLine("Average of data is: {0}", average);
+            // ...or pass an array of doubles.
+            double[] data = { 4.0, 3.2, 5.7 };
+            average = CalculateAverage(data);
+            Console.WriteLine("Average of data is: {0}", average);
 
-            //// Average of 0 is 0!
-            //Console.WriteLine("Average of data is: {0}", CalculateAverage());
+            // Average of 0 is 0!
+            Console.WriteLine("Average of data is: {0}", CalculateAverage());
 
-            string fullname = GetCompleteName("Haji", "ch", "Allah dita", "james bond" );
+            string fullname = GetCompleteName("Haji", "ch", "Allah dita", "james bond");
 
             Console.WriteLine(fullname);
 
             #endregion
 
             Console.ReadLine();
+        }
+
+        private static ref int GiveMeNumber(int[] numbers, int v)
+        {
+            return ref numbers[v];
         }
 
         // Return average of "some number" of doubles.
